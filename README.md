@@ -24,3 +24,18 @@ TripSplit es una aplicación web diseñada para simplificar la organización de 
 * **Calculadora de Gastos Compartidos & Saldos:** Registro de compras (hospedaje, transporte, comida) y cálculo automático de saldos (quién le debe a quién).
 * **Checklist de Equipaje:** Lista interactiva de cosas por llevar.
 * **Presupuesto & Resumen Gráfico:** Gráficas en tiempo real para visualizar el presupuesto consumido vs. disponible.
+
+# TripSplit – Planificador de viajes y gastos compartidos
+
+## Instalación
+1. `npm install`
+2. Crear la BD: `mysql -u root -p < database/schema_sprint2.sql` (crea la base `tripsplit` y las tablas del Sprint 2).
+3. Copiar `.env.example` a `.env` y completar los valores (nunca subir `.env`).
+4. `npm start` y abrir http://localhost:3000
+
+## Pruebas de integración
+Crea una BD de pruebas (por ejemplo `tripsplit_test`) con el mismo esquema, apunta `DB_NAME` a ella en `.env`
+(¡las pruebas vacían las tablas!) y ejecuta `npm test`. Muestra resultados y cobertura.
+
+## Estructura
+`client/` frontend · `server/src/{routes,middlewares,controllers,models,config}` · `server/tests` · `database/` · `docs/`
