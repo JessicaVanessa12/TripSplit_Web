@@ -14,8 +14,7 @@ module.exports = {
         `INSERT INTO viajes (nombre, destino, fecha_inicio, fecha_fin, presupuesto_total, organizador_id, codigo_invitacion)
          VALUES (?, ?, ?, ?, ?, ?, ?)`,
         [d.nombre, d.destino, d.fecha_inicio, d.fecha_fin, d.presupuesto_total, organizadorId, codigo]);
-      await cn.execute("INSERT INTO participantes_viaje (viaje_id, usuario_id, rol) VALUES (?, ?, 'organizador')", [r.insertId, organizadorId]);
-      await cn.commit();
+      await cn.execute("INSERT INTO participantes_viaje (viaje_id, usuario_id, rol) VALUES (?, ?, 'organizador') ON DUPLICATE KEY UPDATE rol = 'organizador'", [r.insertId, organizadorId]);      await cn.commit();
       return { id: r.insertId, ...d, organizador_id: organizadorId, codigo_invitacion: codigo };
     } catch (e) { await cn.rollback(); throw e; } finally { cn.release(); }
   },
