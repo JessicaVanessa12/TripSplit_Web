@@ -1,0 +1,69 @@
+:root {
+    --indigo-600: #4648c8;
+    --indigo-500: #5b5ee0;
+    --indigo-100: #e8e9fb;
+    --indigo-50: #f4f4fe;
+    --pink-600: #a8307a;
+    --pink-100: #fbe6f1;
+    --green-600: #1b7a4b;
+    --green-100: #dff5e9;
+    --ink: #1a1b3a;
+    --muted: #6b6d8f;
+    --line: #dcdcf3;
+    --white: #fff;
+    --danger: #b3261e;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --shadow: 0 8px 24px rgba(70, 72, 200, .10);
+    --font: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font);
+    background: var(--indigo-50);
+    color: var(--ink);
+    line-height: 1.45;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+a {
+    color: var(--indigo-600);
+    text-decoration: none;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+:focus-visible {
+    outline: 3px solid var(--indigo-500);
+    outline-offset: 2px;
+}
+
+.muted {
+    color: var(--muted);
+    font-size: .9rem;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
