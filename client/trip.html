@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>Trip · TripSplit</title>
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="trips.html">
+            <span class="brand-mark">T</span>TripSplit
+        </a>
+        <nav class="nav" aria-label="Main">
+            <a class="active" href="trips.html">Trips</a>
+            <a href="#" aria-disabled="true">Activity</a>
+            <a href="#" aria-disabled="true">Balances</a>
+        </nav>
+        <div class="user">
+            <span id="user-name"></span>
+            <button id="btn-logout" class="btn-ghost" type="button">Log out</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <p id="trip-msg" class="alert" role="alert"></p>
+        <a href="trips.html">← My trips</a>
+
+        <section class="card hero-card">
+            <div class="row">
+                <div>
+                    <span class="badge" id="t-role"></span>
+                    <h1 class="trip-title" id="t-name" style="margin-top:.5rem"></h1>
+                    <div class="meta">
+                        <span class="badge badge-ok" id="t-dest"></span>
+                        <span class="muted" id="t-dates"></span>
+                    </div>
+                </div>
+                <div class="stat">
+                    <small>Total budget</small>
+                    <strong id="t-budget" style="font-size:1.3rem"></strong>
+                </div>
+            </div>
+            <div class="row" style="margin-top:1rem">
+                <div class="person">
+                    <span id="t-faces"></span>
+                    <span class="muted" id="t-count"></span>
+                </div>
+                <span class="muted">Invite code: <span class="invite-code" id="t-code"></span></span>
+            </div>
+        </section>
+
+        <div class="tabs" role="tablist" aria-label="Trip sections">
+            <button class="tab active" type="button">Travelers</button>
+            <button class="tab" type="button" disabled>Itinerary · S3</button>
+            <button class="tab" type="button" disabled>Expenses · S3</button>
+            <button class="tab" type="button" disabled>Luggage · S4</button>
+            <button class="tab" type="button" disabled>Budget · S4</button>
+        </div>
+
+        <div class="two-col">
+            <section class="card">
+                <h2>Travelers</h2>
+                <ul id="people" class="list"></ul>
+                <p id="people-msg" class="alert" role="alert"></p>
+            </section>
+
+            <aside class="card">
+                <h2>Add traveler</h2>
+                <p class="muted" style="margin-bottom:1rem">Only the organizer can add or remove people.</p>
+                <form id="add-form" novalidate hidden>
+                    <label class="field">
+                        Email
+                        <input name="correo" type="email" maxlength="150" placeholder="friend@example.com" required>
+                    </label>
+                    <button class="btn btn-block" type="submit">Add traveler</button>
+                </form>
+            </aside>
+        </div>
+
+        <section class="card placeholder">
+            <span class="badge badge-soon">Coming next</span>
+            <h3>Itinerary, expenses, luggage and budget charts</h3>
+            <p>These sections are planned for Sprints 3 and 4.</p>
+        </section>
+    </main>
+
+    <script type="module" src="js/trip-page.js"></script>
+</body>
+</html>

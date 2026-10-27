@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <title>Sign in · TripSplit</title>
+</head>
+<body>
+    <main class="auth">
+        <section class="auth-hero">
+            <div class="brand">
+                <span class="brand-mark">T</span>TripSplit
+            </div>
+            <h1>Travel together, split costs <span>without friction</span></h1>
+            <p class="muted">Say goodbye to endless spreadsheets and awkward conversations. Plan trips and share memories, not debts.</p>
+            <div class="auth-features">
+                <div class="card">
+                    <strong>Automatic expense tracking</strong>
+                    <p class="muted">Coming in Sprint 3</p>
+                </div>
+                <div class="card">
+                    <strong>Smart debt settlement</strong>
+                    <p class="muted">Coming in Sprint 3</p>
+                </div>
+                <div class="card">
+                    <strong>Collaborative itinerary</strong>
+                    <p class="muted">Coming in Sprint 3</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="auth-panel">
+            <div class="auth-box">
+                <div class="tabs" role="tablist">
+                    <button id="tab-login" class="tab active" type="button">Sign in</button>
+                    <button id="tab-register" class="tab" type="button">Create account</button>
+                </div>
+
+                <h2 id="auth-title">Welcome back!</h2>
+                <p class="muted" style="margin-bottom:1.2rem">Enter your credentials to access your trips.</p>
+
+                <form id="auth-form" novalidate>
+                    <label class="field" id="field-name" hidden>
+                        Full name
+                        <input id="auth-name" name="nombre" maxlength="100" autocomplete="name">
+                    </label>
+
+                    <label class="field">
+                        Email
+                        <input name="correo" type="email" maxlength="150" autocomplete="email" placeholder="name@example.com" required>
+                    </label>
+
+                    <label class="field">
+                        Password
+                        <input name="contrasena" type="password" maxlength="72" autocomplete="current-password" placeholder="8+ characters, letters and numbers" required>
+                    </label>
+
+                    <p id="auth-msg" class="alert" role="alert"></p>
+
+                    <button id="btn-submit" class="btn btn-block" type="submit">Sign in to TripSplit</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="js/auth-page.js"></script>
+</body>
+</html>

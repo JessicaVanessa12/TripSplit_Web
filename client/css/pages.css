@@ -1,0 +1,43 @@
+.auth-features {
+    display: grid;
+    gap: .6rem;
+    margin-top: .5rem;
+}
+
+.auth-features .card {
+    padding: .8rem 1rem;
+    box-shadow: none;
+    background: rgba(255, 255, 255, .7);
+}
+
+.auth-box h2 {
+    margin-bottom: .25rem;
+}
+
+.auth-box .tabs {
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+
+.auth-box .tab {
+    flex: 1;
+}
+
+.trip-title {
+    font-size: 2rem;
+    line-height: 1.15;
+}
+
+.meta {
+    display: flex;
+    gap: .6rem;
+    flex-wrap: wrap;
+    margin-top: .5rem;
+}
+
+.invite-code {
+    font-family: ui-monospace, Consolas, monospace;
+    background: var(--indigo-100);
+    padding: .1rem .5rem;
+    border-radius: 6px;
+}
