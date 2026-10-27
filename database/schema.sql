@@ -1,3 +1,6 @@
+CREATE DATABASE IF NOT EXISTS tripsplit CHARACTER SET utf8mb4;
+USE tripsplit;
+
 CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
@@ -13,6 +16,7 @@ CREATE TABLE viajes (
     fecha_inicio DATE NOT NULL,
     fecha_fin DATE NOT NULL,
     presupuesto_total DECIMAL(10,2) NOT NULL CHECK (presupuesto_total >= 0),
+    CHECK (fecha_fin >= fecha_inicio),
     organizador_id INT NOT NULL,
     codigo_invitacion CHAR(8) UNIQUE,
     creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -42,6 +46,12 @@ CREATE TABLE participantes_viaje (
     FOREIGN KEY (viaje_id) REFERENCES viajes (id) ON DELETE CASCADE,
     FOREIGN KEY (usuario_id) REFERENCES usuarios (id)
 );
+
+CREATE TRIGGER registrar_organizador_como_participante
+AFTER INSERT ON viajes
+FOR EACH ROW
+INSERT INTO participantes_viaje (viaje_id, usuario_id, rol)
+VALUES (NEW.id, NEW.organizador_id, 'organizador');
 
 CREATE TABLE actividades (
     id INT AUTO_INCREMENT PRIMARY KEY,
